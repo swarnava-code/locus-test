@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="INFO">
+    <Appenders>
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout disableAnsi="false"
+                           pattern="%highlight{%d{HH:mm:ss.SSS} %-5level %logger{36}.%M() @%L - %msg%n}{FATAL=red bold, ERROR=red, WARN=yellow bold, INFO=white, DEBUG=cyan, TRACE=blue}"/>
+        </Console>
+        <File name="debugFile" fileName="target/logs/debug.log" immediateFlush="false" append="false">
+            <PatternLayout pattern="%d{yyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+        </File>
+        <File name="infoFile" fileName="target/logs/info.log" immediateFlush="false" append="false">
+            <PatternLayout pattern="%d{yyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+        </File>
+        <File name="allFile" fileName="target/logs/all.log" immediateFlush="false" append="false">
+            <PatternLayout pattern="%d{yyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+        </File>
+        <File name="warnFile" fileName="target/logs/warn.log" immediateFlush="false" append="false">
+            <PatternLayout pattern="%d{yyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+        </File>
+    </Appenders>
+    <Loggers>
+    <!-- (Root Level HIGH): all -> trace -> debug -> info -> warn -> error -> fatal :(LOW Root Level)  -->
+    <Root level="debug">
+        <AppenderRef ref="Console"/>
+        <AppenderRef ref="STDOUT"/>
+        <AppenderRef ref="debugFile" level="debug"/>
+        <AppenderRef ref="infoFile" level="info"/>
+        <AppenderRef ref="allFile" level="all"/>
+        <AppenderRef ref="warnFile" level="warn"/>
+    </Root>
+    </Loggers>
+</Configuration>
