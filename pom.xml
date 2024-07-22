@@ -12,23 +12,23 @@
         <maven.compiler.source>21</maven.compiler.source>
         <maven.compiler.target>21</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+        <report>target/karate-reports</report>
+        <surefireversion>3.0.0-M5</surefireversion>
+        <suiteName>API Test</suiteName>
+        <testng>debug.xml</testng>
+        <parallel>false</parallel>
+        <threadCount>1</threadCount>
+        <poi.version>3.13</poi.version>
     </properties>
 
     <dependencies>
-
-<!--        <dependency>-->
-<!--            <groupId>org.junit.jupiter</groupId>-->
-<!--            <artifactId>junit-jupiter-api</artifactId>-->
-<!--            <version>5.11.0-M2</version>-->
-<!--            <scope>test</scope>-->
-<!--        </dependency>-->
         <dependency>
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
             <version>7.6.1</version>
             <scope>test</scope>
         </dependency>
-
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
@@ -44,8 +44,6 @@
             <artifactId>webdrivermanager</artifactId>
             <version>5.9.1</version>
         </dependency>
-
-        <!-- To print logs -->
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>
             <artifactId>log4j-core</artifactId>
@@ -56,22 +54,18 @@
             <artifactId>log4j-api</artifactId>
             <version>2.18.0</version>
         </dependency>
-
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <version>1.18.34</version>
             <scope>provided</scope>
         </dependency>
-
         <dependency>
             <groupId>io.rest-assured</groupId>
             <artifactId>rest-assured</artifactId>
             <version>5.5.0</version>
             <scope>test</scope>
         </dependency>
-
-
     </dependencies>
 
 </project>
