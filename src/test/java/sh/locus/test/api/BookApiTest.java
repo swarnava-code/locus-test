@@ -12,7 +12,6 @@ public class BookApiTest extends BaseClass {
 
     @Test
     public void getBooksTest() {
-        RestAssured.baseURI = BASE_URL;
         Response response = RestAssured
                 .given()
                 .when()

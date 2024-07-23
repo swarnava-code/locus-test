@@ -1,9 +1,10 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 <suite name="TestSuite">
-    <test name="MovieApiTests">
+    <test name="the-one-api-tests">
         <classes>
-            <class name="sh.locus.test.api.MovieApiTest"/>
             <class name="sh.locus.test.api.BookApiTest"/>
+            <class name="sh.locus.test.api.MovieApiNegativeTest"/>
+            <class name="sh.locus.test.api.MovieApiPositiveTest"/>
         </classes>
     </test>
 </suite>
