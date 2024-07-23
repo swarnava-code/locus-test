@@ -12,18 +12,14 @@ public class BaseClass {
     static Properties properties;
 
     @BeforeClass
-    public static void getProperties() {
+    public static void getPropertiesAndToken() {
         properties = FileUtil.readPropertiesFile(PROP_PATH);
+        bearerToken = "Bearer " + properties.getProperty("token");
     }
 
     @BeforeClass
     public static void getBaseUri() {
         RestAssured.baseURI = "https://the-one-api.dev/v2";
-    }
-
-    @BeforeClass
-    public static void getBearerToken() {
-        bearerToken = "Bearer " + properties.getProperty("token");
     }
 
 }

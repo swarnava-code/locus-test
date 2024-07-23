@@ -5,6 +5,7 @@
             <class name="sh.locus.test.api.BookApiTest"/>
             <class name="sh.locus.test.api.MovieApiNegativeTest"/>
             <class name="sh.locus.test.api.MovieApiPositiveTest"/>
+            <class name="sh.locus.test.api.MovieApiTwoStepCaseTest"/>
         </classes>
     </test>
 </suite>
