@@ -16,4 +16,12 @@ public class ProductListMap {
         return By.className("_75nlfW");
     }
 
+    public By pumaCheckbox(){
+        return By.cssSelector("div[title='PUMA'] div[class='XqNaEv']");
+    }
+
+    public By verifyPuma(){
+        return By.xpath("//div[@class='_6tw8ju']");
+    }
+
 }

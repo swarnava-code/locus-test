@@ -1,6 +1,8 @@
 package sh.locus.test.web.page;
 
 import lombok.AllArgsConstructor;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -12,6 +14,7 @@ import java.util.List;
 
 @AllArgsConstructor
 public class ProductListPage extends PageUtil {
+    private static final Logger logger = LogManager.getLogger(ProductListPage.class);
     private static final ProductListMap productListMap = new ProductListMap();
 
     private WebDriverWait wait;
@@ -32,13 +35,21 @@ public class ProductListPage extends PageUtil {
         parentRowContainer1 = null;
     }
 
-    public void filter() {
+    public void applyPriceFilter() {
         // TODO: fix it
         WebElement seekbar = wait.until(ExpectedConditions.visibilityOfElementLocated(productListMap.seekbar()));
         int width = seekbar.getSize().getWidth();
         int xOffset = width / 2;
 //        actions.clickAndHold(seekbar).moveByOffset(xOffset, 0).release().perform();
         seekbar = null;
+    }
+
+    public void applyBrandFilter() {
+        WebElement pumaCheckbox = wait.until(ExpectedConditions.visibilityOfElementLocated(productListMap.pumaCheckbox()));
+        pumaCheckbox.click();
+        WebElement verifyPuma = wait.until(ExpectedConditions.visibilityOfElementLocated(productListMap.verifyPuma()));
+        logger.info(verifyPuma.getText());
+        Assert.assertEquals(verifyPuma.getText(), "PUMA");
     }
 
 }

@@ -52,6 +52,12 @@ public class FlipkartTestRunner {
     }
 
     @Test
+    void testApplyFeature() {
+        driver.get(Constant.WEB_ADDRESS_FOR_ITEM_LIST);
+        productListPage.applyBrandFilter();
+    }
+
+    @Test
     void testProductDetailPage() {
         driver.get(Constant.WEB_ADDRESS_FOR_SINGLE_ITEM);
         singleProductPage.assertionWithAddCartAndBuyButtons();
